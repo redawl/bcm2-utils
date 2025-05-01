@@ -1447,12 +1447,15 @@ struct bcm2_profile bcm2_profiles[] = {
 				.magic = { 0x83f8cc28, "2.5.0alpha8" },
 				.printf = 0x83f8a0f4,
 				.sscanf = 0x83f8aac8,
+				.getline = 0x83f89e2c,
 				.rwcode = 0x86000000,
 				.buffer = 0x87000000,
 				.spaces = {
 					{
 						.name = "flash",
 						.read = { 0x83f8128c, BCM2_READ_FUNC_OBL },
+   						.write = { 0x83f810b0, 0 },
+						.erase = { 0x83f814d4, BCM2_ERASE_FUNC_OL },
 					}
 				},
 			},
